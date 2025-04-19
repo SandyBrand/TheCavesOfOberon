@@ -5,7 +5,7 @@ As a 1980s kid, I used to play a game called "The Caves of Oberon" and was alway
 Now, 40 years later, I thought it would be a fun little hobby project to do some 'digital archaeology' and try to construct the full map, including all its moving parts, into a single image to be able to see it in all its glory.
 
 There have been various releases of this game on different platforms and under different names:
-[MobyGames - The Caves of Oberon](https://www.mobygames.com/game/84320/the-caves-of-oberon/). The version I have based my work on is the one that I played when I was young, which is the Dutch version released for [MSX 1](https://en.wikipedia.org/wiki/MSX) in 1986: [Wikipedia ñ De Grotten van Oberon](https://nl.wikipedia.org/wiki/De_Grotten_van_Oberon) For ease of use I have analyzed the disk version of the game. It should be more or less identical to cassette release ó which is the version I actually played back then.
+[MobyGames - The Caves of Oberon](https://www.mobygames.com/game/84320/the-caves-of-oberon/). The version I have based my work on is the one that I played when I was young, which is the Dutch version released for [MSX 1](https://en.wikipedia.org/wiki/MSX) in 1986: [Wikipedia ‚Äì De Grotten van Oberon](https://nl.wikipedia.org/wiki/De_Grotten_van_Oberon) For ease of use I have analyzed the disk version of the game. It should be more or less identical to cassette release ‚Äî which is the version I actually played back then.
 
 After some digging, experimentation and scripting I was able to reconstruct the full map into a single animated image. And here is the final result:
 
@@ -85,7 +85,7 @@ It contains the loading screen which it will write into VRAM so that it becomes 
 
 This is actually a [.BIN file](#bin-file): Start = 0x8300, End = 0xC501, Execution = 0x843C.
 
-It contains all the map data and the 'blocks' that are used to compress it. When the binary runs it copies all the relevant information into memory page 0 (0x0000ñ0x3FFF) segment 3.
+It contains all the map data and the 'blocks' that are used to compress it. When the binary runs it copies all the relevant information into memory page 0 (0x0000‚Äì0x3FFF) segment 3.
 
 Also see [Constructing The Map](#constructing-the-map).
 
@@ -139,40 +139,40 @@ The cells themselves have the following functionality:
 
 | Cell Range | Usage / Comment |
 |------------|-----------------|
-| 0ñ127   | These are the cells that the game updates constantly to 'animate' all the dynamic obstacles. The update frequency is linked to the VDP refresh rate (50 Hz for PAL, 60 Hz for NTSC) |
+| 0‚Äì127   | These are the cells that the game updates constantly to 'animate' all the dynamic obstacles. The update frequency is linked to the VDP refresh rate (50 Hz for PAL, 60 Hz for NTSC) |
 | 128        | Empty (so this is where the player can move safely) |
-| 129ñ154 | Characters: AñZ |
+| 129‚Äì154 | Characters: A‚ÄìZ |
 | 155        | Part of the fuel tank |
 | 156        | ??? |
-| 157ñ158 | Terrain |
+| 157‚Äì158 | Terrain |
 | 159        | Background for the scroll text at the bottom of the screen |
 | 160        | Character: Space |
 | 161        | Character: Exclamation ! |
-| 162ñ167 | ??? |
-| 168ñ169 | Characters: Brackets ( ) |
-| 170ñ171 | ??? |
+| 162‚Äì167 | ??? |
+| 168‚Äì169 | Characters: Brackets ( ) |
+| 170‚Äì171 | ??? |
 | 172        | Character: Comma , |
 | 173        | <ul><li>Part of the fuel tank.</li><li>Also used for terrain (as part of the large-font wall text)</li></ul> |
 | 174        | Character: Period . |
 | 175        | Character: Slash forward / |
-| 176ñ185 | Characters: 0ñ9 |
-| 186ñ190 | ??? |
+| 176‚Äì185 | Characters: 0‚Äì9 |
+| 186‚Äì190 | ??? |
 | 191        | Character: Question mark ? |
 | 192        | Interaction surface of 'sensors' to trigger the 'game completed' screen when you reached the center of the maze |
-| 193ñ216 | Terrain |
-| 217ñ219 | ??? |
-| 220ñ232 | <ul><li>Terminal text where questions are shown by writing patterns directly into the cells (max length , and also used to animate the cursor and such. Maximum text length is 232 - 220 + 1 = 13 characters)</li><li>Radar screen where the player's position is shown</li><li>Fuel counter display when docked to the fuel tank</li></ul> |
-| 233ñ234 | Terrain |
+| 193‚Äì216 | Terrain |
+| 217‚Äì219 | ??? |
+| 220‚Äì232 | <ul><li>Terminal text where questions are shown by writing patterns directly into the cells (max length , and also used to animate the cursor and such. Maximum text length is 232 - 220 + 1 = 13 characters)</li><li>Radar screen where the player's position is shown</li><li>Fuel counter display when docked to the fuel tank</li></ul> |
+| 233‚Äì234 | Terrain |
 | 235        | Interaction surface for puzzle terminals that temporarily disable all red barriers when questions answered correctly |
 | 236        | Interaction surface of 'sensors' that temporarily disables all red barriers immediately |
 | 237        | Interaction surface of 'sensors' that toggle between horizontal or vertical blue barriers |
 | 238        | Horizontal and vertical red barriers that will be temporarily disabled when a puzzle is answered correctly |
 | 239        | Interaction surface of 'fuel tanks' that allow the player to replenish fuel |
 | 240        | Interaction surface of 'radars' that show the player's position in the map |
-| 241ñ242 | Terrain |
+| 241‚Äì242 | Terrain |
 | 243        | ??? |
-| 244ñ249 | Terrain |
-| 250ñ253 | ??? |
+| 244‚Äì249 | Terrain |
+| 250‚Äì253 | ??? |
 | 254        | Vertical barriers (blue when enabled, otherwise black) |
 | 255        | Horizontal barriers (blue when enabled, otherwise black) |
 
@@ -180,8 +180,8 @@ The raw data for the cell patterns and colors are located in the [`OBERON.003`](
 
 | Cell Range | Start In File | Comments |
 |------------|---------------|----------|
-| Cell Patterns 128ñ255 | 1543 | Cell patterns 0ñ127 are omitted because these are computed procedurally and updated in VRAM every frame as part of the animation obstacles |
-| Cell Colors 0ñ255 | 2567 | For some reason, colors for cell 159 (used for the background for the bottom of the screen) are modified at run-time. <ul><li>In file: value = 0xD4. Foreground = 13, background = 4</li><li>In VRAM at run-time: value = 0x44. Foreground = 4, background = 4</li></ul>So, only the foreground color is changed, although this does not have any effect in-game because the scroll text at the bottom of the screen is all done with sprites anyways. |
+| Cell Patterns 128‚Äì255 | 1543 | Cell patterns 0‚Äì127 are omitted because these are computed procedurally and updated in VRAM every frame as part of the animation obstacles |
+| Cell Colors 0‚Äì255 | 2567 | For some reason, colors for cell 159 (used for the background for the bottom of the screen) are modified at run-time. <ul><li>In file: value = 0xD4. Foreground = 13, background = 4</li><li>In VRAM at run-time: value = 0x44. Foreground = 4, background = 4</li></ul>So, only the foreground color is changed, although this does not have any effect in-game because the scroll text at the bottom of the screen is all done with sprites anyways. |
 
 
 ### Map Layout
@@ -190,7 +190,7 @@ This section explains how the map data is structured and stored.
 
 #### Cell Blocks
 
-A simple ëcompressioní strategy has been applied whereby the map is composed out of larger ëblocksí of cells.
+A simple ‚Äòcompression‚Äô strategy has been applied whereby the map is composed out of larger ‚Äòblocks‚Äô of cells.
 
 These blocks are 8 x 8 cells in dimension. And, as each cell is, of course, 8 x 8 pixels, this means a block spans 64 x 64 pixels in total.
 
@@ -252,7 +252,7 @@ These are binary files that often contain combinations of code and raw data. MSX
 
 Not all cells appear to be used, which is not so surprising. However, we also find that 17 blocks are never referenced by the block grid and thus will never show up in the game: 24, 52, 53, 54, 55, 56, 57, 64, 65, 99, 100, 101, 108, 109, 125, 126 and 127. 
 
-Some of these blocks look rather ëundefinedí, but a couple of them are clearly not:
+Some of these blocks look rather ‚Äòundefined‚Äô, but a couple of them are clearly not:
 
 ![Some unused blocks](images/SomeUnusedBlocks.png)
 
@@ -260,12 +260,12 @@ These contain text in Dutch that translate to English as follows:
 
 | Dutch | English |
 |-------|---------|
-| ìNeem de tweede afslag rechtsî | "Take the second exit on the right" |
-| ìNeem de eerste afslag omhoogî | "Take the first exit up" |
-| ìGa pas omhoog als U ook omlaag kunt !î | "Don't go up until you can go down" |
-| ìU koos de foute afslagî | "You took the wrong turn" |
-| ìHaha gefoptî | "Haha, fooled" |
-| ìToch maar even kijken ????î | "Still went to have a look ????" |
+| ‚ÄúNeem de tweede afslag rechts‚Äù | "Take the second exit on the right" |
+| ‚ÄúNeem de eerste afslag omhoog‚Äù | "Take the first exit up" |
+| ‚ÄúGa pas omhoog als U ook omlaag kunt !‚Äù | "Don't go up until you can go down" |
+| ‚ÄúU koos de foute afslag‚Äù | "You took the wrong turn" |
+| ‚ÄúHaha gefopt‚Äù | "Haha, fooled" |
+| ‚ÄúToch maar even kijken ????‚Äù | "Still went to have a look ????" |
 
 Maybe the author of the game originally intended to add some hints and/or taunts for the player?
 
