@@ -31,7 +31,7 @@ After some digging, experimentation and scripting I was able to reconstruct the 
     - [Cell Blocks](#cell-blocks)
     - [Block Grid](#block-grid)
 - [Formats](#formats)
-  - [.BIN File](#binfile)
+  - [.BIN File](#bin-file)
 - [Trivia](#trivia)
   - [Unused Cells And Blocks](#unused-cells-and-blocks)
   - [Claimed Map Size](#claimed-map-size)
