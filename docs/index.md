@@ -18,6 +18,7 @@ After some digging, experimentation and scripting I was able to reconstruct the 
 
 ## Table of Contents
 
+- [Game Objective & Player Start](#game-objective-player-start)
 - [Game Files](#game-files)
   - [`AUTOEXEC.BAS`](#autoexecbas)
   - [`OBERON.BAS`](#oberonbas)
@@ -36,6 +37,35 @@ After some digging, experimentation and scripting I was able to reconstruct the 
   - [Unused Cells And Blocks](#unused-cells-and-blocks)
   - [Claimed Map Size](#claimed-map-size)
 - [Credits](#credits)
+
+
+---
+
+## Game Objective & Player Start
+
+Here is a quick summary of the game for those who might not be (fully) familiar with it.
+
+The player starts at the top of the map, just below the “Oberon” logo, flying a UFO-like spacecraft.
+
+![Player start position](images/DeGrottenVanOberon_MSX1_Start.png)
+
+The objective is to reach the **data vault**, located near the center of the map. It’s marked by double arrows and the message _“Hartelijk gefeliciteerd!!”_ — which is Dutch for: **“Congratulations!!”**
+
+![Goal position](images/DeGrottenVanOberon_MSX1_Goal.png)
+
+To gain access, the player must navigate a puzzle-like maze:
+- **Blue barriers** must be rotated between horizontal and vertical orientations
+- **Red barriers** can be temporarily disabled by correctly answering a question at one of the terminals
+
+There’s no time limit, but the player must regularly **refuel** by docking with one of the fuel tanks scattered throughout the level.
+
+Once the goal is reached, the player is rewarded with the following screen:
+
+![Congratulations](images/DeGrottenVanOberon_MSX1_Congratulations.png)
+
+> “**Congratulations!** Through your dedication, knowledge and perseverance, humanity now has the wisdom of times gone by.  
+> Your name will be known forever!”
+
 
 ---
 
